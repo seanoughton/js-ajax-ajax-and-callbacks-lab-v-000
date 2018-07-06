@@ -17,7 +17,7 @@ function searchRepositories() {
   $.get(`https://api.github.com/search/repositories?q=${searchTerms}`).done(function(data) {
     //const repoList = template(data.items);
     const repos = data.items
-    console.log(repos);
+    //console.log(repos);
     //iterate through the array and create html for the elements you want to show
     const repoList = '<ul>' + repos.map(r => {
      return (`
