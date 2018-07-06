@@ -1,7 +1,8 @@
 $(document).ready(function (){
 });
 
-var url =  "https://api.github.com/search/repositories?q=topic:"
+var url =  "https://api.github.com/search/repositories?q="
+//"https://api.github.com/search/repositories?q=topic:"
 
 function searchRepositories() {
   searchTerm = document.getElementById("searchTerms").value;
@@ -10,6 +11,8 @@ function searchRepositories() {
   const template = Handlebars.compile(src);
 **/
   searchURl = url + searchTerm
+  ///https:\/\/api.github.com\/search\/repositories\?q=tetris/
+  //console.log(searchURl)
   $.get(searchURl).done(function(data) {
     //const repoList = template(data.items);
     const repos = data.items
@@ -47,6 +50,8 @@ function searchRepositories() {
     const baseUrl = "https://api.github.com/repos/"
     const name = el.dataset.name
     const commitUrl = baseUrl + name + '/' + name + '/commits'
+    ///https:\/\/api.github.com\/repos\/owner\/repo\/commits/
+    console.log(commitUrl)
 
 //handlebars stuff
     //const src = document.getElementById("commit-template").innerHTML;
