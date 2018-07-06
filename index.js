@@ -14,10 +14,10 @@ function searchRepositories() {
   searchURl = url + searchTerm + '/'
   ///https://api.github.com/search/repositories?q=tetris/
   console.log(searchURl)
-  $.get(searchURl).done(function(data) {
+  $.get(`https://api.github.com/search/repositories?q=${searchTerm}`, data => {
     //const repoList = template(data.items);
     const repos = data.items
-    console.log(repos);
+    //console.log(repos);
     //iterate through the array and create html for the elements you want to show
     const repoList = '<ul>' + repos.map(r => {
      return (`
@@ -31,8 +31,6 @@ function searchRepositories() {
             </li>`
             )
     }).join('') + "</ul>"
-
-
 
 
     document.getElementById("results").innerHTML = repoList
@@ -50,7 +48,7 @@ function searchRepositories() {
   function showCommits(el) {
     const baseUrl = "https://api.github.com/repos/"
     const name = el.dataset.name
-    const commitUrl = baseUrl + name + '/commits'
+    const commitUrl = baseUrl + 'owner/repo/commits'
     //const commitUrl = baseUrl + name + '/' + name + '/commits'
     ///https://api.github.com/repos/owner/repo/commits/
     //console.log(commitUrl)
