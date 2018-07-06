@@ -11,9 +11,9 @@ function searchRepositories() {
   const src = document.getElementById("repository-template").innerHTML;
   const template = Handlebars.compile(src);
 **/
-  searchURl = url + searchTerm
-  ///https:\/\/api.github.com\/search\/repositories\?q=tetris/
-  //console.log(searchURl)
+  searchURl = url + searchTerm + '/'
+  ///https://api.github.com/search/repositories?q=tetris/
+  console.log(searchURl)
   $.get(searchURl).done(function(data) {
     //const repoList = template(data.items);
     const repos = data.items
