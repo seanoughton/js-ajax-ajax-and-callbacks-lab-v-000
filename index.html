@@ -52,9 +52,25 @@ Include repository name, description, and a link to the HTML URL. Also include r
             <p>{{owner.login}}</p>
             <img src="{{owner.avatar_url}}" height="32" width="32">
             <h2><a href="{{html_url}}">{{owner.html_url}}</a></h2>
+            <a href="#" data-name="{{name}}" onclick="showCommits(this)">Show Commits</a>
           </li>
         {{/each}}
       </ul>
     </script>
+
+<!-- for each commit, list : SHA, author, author login, author avatar image -->
+    <script id="commit-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each this }}
+          <li>
+            <p>{{sha}}</p>
+            <p>{{author.login}}</p>
+            <img src="{{owner.avatar_url}}" height="32" width="32">
+          </li>
+        {{/each}}
+
+      </ul>
+    </script>
+
   </body>
 </html>
