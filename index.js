@@ -1,7 +1,7 @@
 $(document).ready(function (){
 });
 
-var url = "https://api.github.com/repositories"
+var url = "https://api.github.com/search/repositories?q=topic:ruby"
 
 //Include repository name, description, and a link to the HTML URL. Also include repository owner login, repository owner avatar as an image, and a link to the owner's profile page. Hint: Pay close attention to the structure of the search results!
 function searchRepositories() {
