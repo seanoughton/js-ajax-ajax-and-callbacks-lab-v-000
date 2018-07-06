@@ -14,7 +14,7 @@ function searchRepositories() {
   searchURl = url + searchTerm + '/'
   ///https://api.github.com/search/repositories?q=tetris/
   console.log(searchURl)
-  $.get(searchURl).done(function(data) {
+  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`).done(function(data) {
     //const repoList = template(data.items);
     const repos = data.items
     console.log(repos);
