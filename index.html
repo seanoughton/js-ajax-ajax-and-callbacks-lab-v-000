@@ -21,7 +21,8 @@
   <body>
     <main id="main">
       <div>
-        <a href="#" onclick="searchRepositories()"></a>
+        <input type="text" id="searchTerms">
+        <a href="#" onclick="searchRepositories()">Search Repositories</a>
       </div>
       <div id="errors"></div>
     </main>
@@ -37,5 +38,23 @@
     </div>
     <script src="jquery-3.1.0.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+<!--
+Include repository name, description, and a link to the HTML URL. Also include repository owner login, repository owner avatar as an image, and a link to the owner's profile page. Hint: Pay close attention to the structure of the search results!
+-->
+    <script id="repository-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each this }}
+          <li>
+            <h2><a href="{{html_url}}">{{name}}</a></h2>
+            <p>{{description}}</p>
+            <p>{{owner.login}}</p>
+            <img src="{{owner.avatar_url}}" height="32" width="32">
+            <h2><a href="{{html_url}}">{{owner.html_url}}</a></h2>
+          </li>
+        {{/each}}
+      </ul>
+    </script>
   </body>
 </html>
