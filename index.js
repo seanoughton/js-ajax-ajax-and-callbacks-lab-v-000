@@ -3,6 +3,7 @@ $(document).ready(function (){
 
 var url =  "https://api.github.com/search/repositories?q="
 //"https://api.github.com/search/repositories?q=topic:"
+//https://api.github.com/search/repositories?q=tetris
 
 function searchRepositories() {
   searchTerm = document.getElementById("searchTerms").value;
@@ -51,7 +52,7 @@ function searchRepositories() {
     const name = el.dataset.name
     const commitUrl = baseUrl + name + '/' + name + '/commits'
     ///https:\/\/api.github.com\/repos\/owner\/repo\/commits/
-    console.log(commitUrl)
+    //console.log(commitUrl)
 
 //handlebars stuff
     //const src = document.getElementById("commit-template").innerHTML;
