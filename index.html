@@ -24,6 +24,7 @@
         <input type="text" id="searchTerms">
         <a href="#" onclick="searchRepositories()">Search Repositories</a>
       </div>
+        
       <div id="errors"></div>
     </main>
     <div class="flexbox-container">
@@ -65,7 +66,7 @@ Include repository name, description, and a link to the HTML URL. Also include r
           <li>
             <p>{{sha}}</p>
             <p>{{author.login}}</p>
-            <img src="{{owner.avatar_url}}" height="32" width="32">
+            <img src="{{author.avatar_url}}" height="32" width="32">
           </li>
         {{/each}}
 
