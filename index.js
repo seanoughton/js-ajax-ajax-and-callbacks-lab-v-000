@@ -33,8 +33,6 @@ function searchRepositories() {
     }).join('') + "</ul>"
 
 
-
-
     document.getElementById("results").innerHTML = repoList
   }).fail(function displayError(error){
     let response = "<p>I'm sorry, there's been an error. Please try again.</p>";
