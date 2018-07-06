@@ -50,8 +50,9 @@ function searchRepositories() {
   function showCommits(el) {
     const baseUrl = "https://api.github.com/repos/"
     const name = el.dataset.name
-    const commitUrl = baseUrl + name + '/' + name + '/commits'
-    ///https:\/\/api.github.com\/repos\/owner\/repo\/commits/
+    const commitUrl = baseUrl + name + '/commits'
+    //const commitUrl = baseUrl + name + '/' + name + '/commits'
+    ///https://api.github.com/repos/owner/repo/commits/
     //console.log(commitUrl)
 
 //handlebars stuff
